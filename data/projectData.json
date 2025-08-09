@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "sector_id": 3,
+    "title": "Waymo One Autonomous Service",
+    "feature_img_url": "https://assets.bizclikmedia.net/668/f16600bd9a7a33d25f2eb4f9cded7262:1dab0d5e75e46dfc4016500748ab83ce/sony-ev.jpeg",
+    "summary_short": "Fully autonomous electric taxi service operating 24/7 with zero-emission vehicles.",
+    "intro_short": "Waymo's autonomous ride-hailing service uses all-electric Jaguar I-PACE vehicles powered by Waymo Driver AI. Operating in Phoenix, San Francisco, and Los Angeles, it provides emission-free transportation with level 4 autonomy.",
+    "impact": "By 2030, Waymo could displace 500,000 personal vehicles, reducing urban CO2 emissions by 1.2 million tons annually while improving accessibility for elderly and disabled passengers.",
+    "original_source_url": "https://waymo.com"
+  },
+  {
+    "id": 2,
+    "sector_id": 3,
+    "title": "Tesla Robotaxi Network",
+    "feature_img_url": "https://di-uploads-pod13.dealerinspire.com/mercedesbenzofbonitasprings/uploads/2023/06/EV-Car-At-Fast-Charging-Stations.jpg",
+    "summary_short": "Tesla's vision for fully autonomous electric taxis with no human drivers.",
+    "intro_short": "Tesla's upcoming robotaxi service will utilize purpose-built vehicles with 360° cameras and Tesla Vision. Designed for continuous operation, vehicles will automatically return to Tesla charging hubs between rides.",
+    "impact": "Projected to reduce urban transportation costs by 75% compared to Uber while eliminating 4.5 tons of CO2 emissions per vehicle annually. Deployment expected in 2025.",
+    "original_source_url": "https://www.tesla.com/robotaxi"
+  },
+  {
+    "id": 3,
+    "sector_id": 3,
+    "title": "Uber Green EV Initiative",
+    "feature_img_url": "https://bsmedia.business-standard.com/_media/bs/img/article/2024-09/11/full/1726079265-6907.jpg",
+    "summary_short": "Uber's transition to 100% electric vehicles in US/EU by 2030.",
+    "intro_short": "Uber is investing $800M to help drivers switch to EVs through partnerships with automakers and charging networks. Features include in-app EV trip filtering, charging station locators, and premium pricing for green rides.",
+    "impact": "Already eliminated 250,000 tons of CO2 in 2023. Projected to remove 5 million gas vehicles from Uber platforms by 2030.",
+    "original_source_url": "https://www.uber.com/us/en/sustainability/"
+  },
+  {
+    "id": 4,
+    "sector_id": 4,
+    "title": "Vehicle-to-Grid Charging Hubs",
+    "feature_img_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsQR0ewIdooN_QOVF2z9L3qptL9jo8Xfymyg&s",
+    "summary_short": "Smart charging stations that enable electric cabs to power the grid during peak hours.",
+    "intro_short": "Innovative charging infrastructure allowing EV taxis to sell stored energy back to utilities during high-demand periods. Uses bidirectional charging technology and AI-powered scheduling.",
+    "impact": "Each vehicle can earn $1,200/year in energy credits while reducing grid strain. Pilot in London shows 23% reduction in peak electricity demand from taxi fleets.",
+    "original_source_url": "https://www.weforum.org/projects/future-of-electric-vehicles-and-mobility"
+  },
+  {
+    "id": 5,
+    "sector_id": 2,
+    "title": "Modular EV Battery Swapping",
+    "feature_img_url": "https://www.bisinfotech.com/wp-content/uploads/2024/04/415240-3-compressed-400x231.jpg",
+    "summary_short": "90-second battery replacement system for continuous cab operation.",
+    "intro_short": "Robotic battery swap stations eliminate charging downtime for commercial EVs. Taxis receive fully charged packs in under 2 minutes while AI optimizes battery health tracking.",
+    "impact": "Increases taxi utilization by 40% and extends battery lifespan by 30%. Currently deployed in 1,200 locations across China and Norway.",
+    "original_source_url": "https://www.nio.com/power-swap"
+  }
+]

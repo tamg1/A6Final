@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Register – Electric Vehicle Solutions</title>
+    <link rel="stylesheet" href="/css/main.css" />
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        background-color: #00a341; /* Tailwind's bg-gray-900 */
+      }
+    </style>
+  </head>
+
+  <body class="h-full flex flex-col bg-gray-900 text-white">
+    <!-- Navbar -->
+    <%- include('partials/navbar', { page: '/register' }) %>
+
+    <!-- Hero Section -->
+    <section class="pt-24 flex justify-center px-4">
+      <div class="bg-gray-800 rounded-lg p-10 max-w-5xl w-full text-center">
+        <h1 class="text-5xl font-bold mb-4">Register</h1>
+        <p class="text-lg text-gray-300">
+          Please provide your details below
+        </p>
+      </div>
+    </section>
+
+    <!-- Form Section -->
+    <main class="flex-1 px-4 md:px-20 bg-gray-900">
+      <div class="max-w-5xl w-full mx-auto pb-20">
+        <% if (successMessage) { %>
+        <div
+          class="flex items-center gap-2 bg-green-600 text-white p-4 rounded-md mb-6"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+          <span><%= successMessage %></span>
+        </div>
+
+        <a
+          href="/login"
+          class="inline-block bg-green-500 hover:bg-green-600 text-white font-semibold rounded-md px-6 py-3"
+        >
+          Proceed to Log In
+        </a>
+        <% } else { %>
+        <form
+          method="POST"
+          action="/register"
+          class="space-y-6 mt-12 text-left"
+        >
+          <!-- User Name -->
+          <div>
+            <label for="userName" class="block mb-1 text-gray-400 font-semibold"
+              >User Name</label
+            >
+            <input
+              type="text"
+              name="userName"
+              id="userName"
+              placeholder="User Name"
+              value="<%= userName %>"
+              required
+              autocomplete="username"
+              autofocus
+              class="w-full p-3 rounded-md bg-gray-800 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-500 text-white"
+            />
+          </div>
+
+          <!-- Password -->
+          <div>
+            <label for="password" class="block mb-1 text-gray-400 font-semibold"
+              >Password</label
+            >
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Password"
+              required
+              autocomplete="new-password"
+              class="w-full p-3 rounded-md bg-gray-800 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-500 text-white"
+            />
+          </div>
+
+          <!-- Confirm Password -->
+          <div>
+            <label
+              for="password2"
+              class="block mb-1 text-gray-400 font-semibold"
+              >Confirm Password</label
+            >
+            <input
+              type="password"
+              name="password2"
+              id="password2"
+              placeholder="Confirm Password"
+              required
+              autocomplete="new-password"
+              class="w-full p-3 rounded-md bg-gray-800 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-500 text-white"
+            />
+          </div>
+
+          <!-- Email -->
+          <div>
+            <label for="email" class="block mb-1 text-gray-400 font-semibold"
+              >Email Address</label
+            >
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Email Address"
+              required
+              autocomplete="email"
+              class="w-full p-3 rounded-md bg-gray-800 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-500 text-white"
+            />
+          </div>
+
+          <!-- Submit Button -->
+          <div class="text-left">
+            <button
+              type="submit"
+              class="bg-green-500 hover:bg-green-600 text-white font-medium rounded-md w-32 h-12 flex items-center justify-center"
+            >
+              Register
+            </button>
+          </div>
+        </form>
+
+        <!-- Error Message -->
+        <% if (errorMessage) { %>
+        <div
+          class="flex items-center gap-2 bg-red-600 text-white p-4 rounded-md mt-6"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+          <span><%= errorMessage %></span>
+        </div>
+        <% } %> <% } %>
+      </div>
+    </main>
+  </body>
+</html>

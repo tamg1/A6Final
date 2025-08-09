@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "sector_name": "Urban Mobility"
+  },
+  {
+    "id": 2,
+    "sector_name": "Battery Technology"
+  },
+  {
+    "id": 3,
+    "sector_name": "Ride Services"
+  },
+  {
+    "id": 4,
+    "sector_name": "Charging Infrastructure"
+  }
+]

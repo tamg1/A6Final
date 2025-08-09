@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Electric Vehicle Solutions</title>
+  <link rel="stylesheet" href="/css/main.css" />
+</head>
+
+<body>
+
+  <%- include('partials/navbar', {page: '/home' }) %>
+
+
+
+    <div class="container mx-auto px-3 py-7">
+
+      <div class="hero bg-base-200 py-10 mb-12 rounded-lg">
+        <div class="hero-content text-center">
+          <div class="max-w-md">
+            <h1 class="text-5xl font-bold">Hello there</h1>
+            <p class="py-6">
+              Check out these Electric Vehicle projects aiming to help our climate!
+            </p>
+            <a href="/solutions/projects" class="btn btn-primary">
+              See projects!
+            </a>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+
+        <div class="card bg-base-100 shadow-xl">
+          <figure>
+            <img
+              src="https://assets.bizclikmedia.net/668/f16600bd9a7a33d25f2eb4f9cded7262:1dab0d5e75e46dfc4016500748ab83ce/sony-ev.jpeg"
+              alt="Project 1" />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title">Waymo</h2>
+            <p>Google's Waymo is building eco-friendly cabs to reduce emissions.</p>
+            <div class="card-actions justify-end">
+              <a href="/solutions/projects/1" class="btn btn-outline btn-primary">More Info</a>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="card bg-base-100 shadow-xl">
+          <figure>
+            <img
+              src="https://di-uploads-pod13.dealerinspire.com/mercedesbenzofbonitasprings/uploads/2023/06/EV-Car-At-Fast-Charging-Stations.jpg"
+              alt="Project 13" />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title">Tesla Robotaxi</h2>
+            <p>Tesla is building robotaxis to launch across the world.</p>
+            <div class="card-actions justify-end">
+              <a href="/solutions/projects/13" class="btn btn-outline btn-primary">More Info</a>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="card bg-base-100 shadow-xl">
+          <figure>
+            <img src="https://bsmedia.business-standard.com/_media/bs/img/article/2024-09/11/full/1726079265-6907.jpg"
+              alt="Project 26" />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title">Uber</h2>
+            <p>Uber is launching cabs as well and reducing C02 emissions with rideshare.</p>
+            <div class="card-actions justify-end">
+              <a href="/solutions/projects/26" class="btn btn-outline btn-primary"> More Info</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+</body>
+
+</html>

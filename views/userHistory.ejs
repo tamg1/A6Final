@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>User History – Electric Vehicle Solutions</title>
+  <link rel="stylesheet" href="/css/main.css" />
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      background-color: #111827;
+      /* Tailwind bg-gray-900 */
+    }
+  </style>
+</head>
+
+<body class="bg-gray-900 text-white min-h-screen flex flex-col">
+  <!-- Navbar -->
+  <%- include('partials/navbar', { page: '/userHistory' }) %>
+
+    <!-- Hero Section -->
+    <section class="pt-24 flex justify-center px-4 md:px-12">
+      <div class="bg-gray-800 rounded-lg p-10 w-full max-w-full text-center">
+        <h1 class="text-5xl font-bold mb-4">
+          <%= session.user.userName %>
+        </h1>
+        <p class="text-lg text-gray-300">
+          User History: <%= session.user.email %>
+        </p>
+      </div>
+    </section>
+
+    <!-- History Table Section -->
+    <main class="flex-1 bg-gray-900 px-4 md:px-12 pb-20">
+      <div class="w-full mx-auto mt-12">
+        <div class="overflow-x-auto rounded-lg shadow-lg bg-gray-800">
+          <table class="w-full text-left border-collapse">
+            <thead class="bg-gray-700 text-gray-100">
+              <tr>
+                <th class="px-6 py-3 text-sm font-semibold">Login Date/Time</th>
+                <th class="px-6 py-3 text-sm font-semibold">
+                  Client Information
+                </th>
+              </tr>
+            </thead>
+            <tbody class="text-sm">
+              <% if (session.user.loginHistory.length===0) { %>
+                <tr>
+                  <td colspan="2" class="text-center px-6 py-4 text-gray-400">
+                    No login history available.
+                  </td>
+                </tr>
+                <% } else { %>
+                  <% for (let i=0; i < session.user.loginHistory.length; i++) { let entry=session.user.loginHistory[i];
+                    let rowClass=(i % 2===0) ? 'bg-gray-900' : 'bg-gray-800' ; %>
+                    <tr class="<%= rowClass %> hover:bg-gray-700 transition">
+                      <td class="px-6 py-4 text-white">
+                        <%= new Date(entry.dateTime).toString() %>
+                      </td>
+                      <td class="px-6 py-4 text-gray-300 whitespace-pre-wrap">
+                        <%= entry.userAgent %>
+                      </td>
+                    </tr>
+                    <% } %>
+                      <% } %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+</body>
+
+</html>

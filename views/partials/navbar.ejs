@@ -1,0 +1,111 @@
+<% const isDarkPage=page==='/login' || page==='/register' || page==='/userHistory' ; %>
+
+  <div
+    class="navbar <%= isDarkPage ? 'fixed top-0 left-0 right-0 z-50 bg-gray-900 shadow-sm text-white' : 'bg-base-100 shadow-sm text-gray-900' %>">
+    <div class="navbar-start">
+      <div class="dropdown">
+        <button tabindex="0" class="btn btn-ghost lg:hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+          </svg>
+        </button>
+
+        <ul tabindex="0"
+          class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52 <%= isDarkPage ? 'bg-gray-900 text-white' : 'bg-base-100 text-gray-900' %>">
+          <li>
+            <a class="<%= (page == '/solutions/projects') ? 'active' : '' %>" href="/solutions/projects">
+              View Projects
+            </a>
+          </li>
+          <li>
+            <a class="<%= (page == '/about') ? 'active' : '' %>" href="/about">
+              About
+            </a>
+          </li>
+
+          <% if (session && session.user) { %>
+            <li>
+              <details>
+                <summary>Account: <%= session.user.userName %>
+                </summary>
+                <ul class="p-2 <%= isDarkPage ? 'bg-gray-900 text-white' : 'bg-base-100 text-gray-900' %>">
+                  <li>
+                    <a class="<%= (page == '/solutions/addProject') ? 'active' : '' %>" href="/solutions/addProject">Add
+                      Project</a>
+                  </li>
+                  <li>
+                    <a class="<%= (page == '/userHistory') ? 'active' : '' %>" href="/userHistory">History of User</a>
+                  </li>
+                  <li>
+                    <a href="/logout">Log Out</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <% } else { %>
+              <li>
+                <details>
+                  <summary>Account</summary>
+                  <ul class="p-2 <%= isDarkPage ? 'bg-gray-900 text-white' : 'bg-base-100 text-gray-900' %>">
+                    <li>
+                      <a class="<%= (page == '/login') ? 'active' : '' %>" href="/login">Login</a>
+                    </li>
+                    <li>
+                      <a class="<%= (page == '/register') ? 'active' : '' %>" href="/register">Register</a>
+                    </li>
+                  </ul>
+                </details>
+              </li>
+              <% } %>
+        </ul>
+      </div>
+
+      <!-- Logo/Brand -->
+      <a href="/" class="btn btn-ghost text-xl">Electric Vehicle Solutions</a>
+    </div>
+
+    <!-- Right (View Projects + About for desktop) -->
+    <div class="navbar-end hidden lg:flex">
+      <ul class="menu menu-horizontal px-1">
+        <li>
+          <a class="<%= (page == '/solutions/projects') ? 'active' : '' %>" href="/solutions/projects">View Projects</a>
+        </li>
+        <li>
+          <a class="<%= (page == '/about') ? 'active' : '' %>" href="/about">About</a>
+        </li>
+
+        <% if (session && session.user) { %>
+          <li>
+            <details>
+              <summary>Account: <%= session.user.userName %>
+              </summary>
+              <ul class="p-2 right-0 <%= isDarkPage ? 'bg-gray-900 text-white' : 'bg-base-100 text-gray-900' %>">
+                <li>
+                  <a class="<%= (page == '/solutions/addProject') ? 'active' : '' %>" href="/solutions/addProject">Add
+                    Project</a>
+                </li>
+                <li>
+                  <a class="<%= (page == '/userHistory') ? 'active' : '' %>" href="/userHistory">User History</a>
+                </li>
+                <li><a href="/logout">Log Out</a></li>
+              </ul>
+            </details>
+          </li>
+          <% } else { %>
+            <li>
+              <details>
+                <summary>Account</summary>
+                <ul class="p-2 right-0 <%= isDarkPage ? 'bg-gray-900 text-white' : 'bg-base-100 text-gray-900' %>">
+                  <li>
+                    <a class="<%= (page == '/login') ? 'active' : '' %>" href="/login">Login</a>
+                  </li>
+                  <li>
+                    <a class="<%= (page == '/register') ? 'active' : '' %>" href="/register">Register</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <% } %>
+      </ul>
+    </div>
+  </div>

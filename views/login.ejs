@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login – Electric Vehicle Solutions</title>
+    <link rel="stylesheet" href="/css/main.css" />
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        background-color: #f1055b; 
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-900 text-white min-h-screen flex flex-col">
+    <!-- Navbar -->
+    <%- include('partials/navbar', { page: '/login' }) %>
+
+    <!-- Hero Section -->
+    <section class="pt-24 flex justify-center px-4">
+      <div class="bg-gray-800 rounded-lg p-10 max-w-5xl w-full text-center">
+        <h1 class="text-5xl font-bold mb-4">Log In</h1>
+        <p class="text-lg text-gray-300">
+          Please provide your details below
+        </p>
+      </div>
+    </section>
+
+    <!-- Form Section -->
+    <main class="flex-1 px-4 md:px-20 pb-20">
+      <div class="max-w-5xl w-full mx-auto">
+        <form method="POST" action="/login" class="space-y-6 mt-12">
+          <!-- User Name -->
+          <div>
+            <label for="userName" class="block mb-1 text-gray-400"
+              >User Name</label
+            >
+            <input
+              type="text"
+              name="userName"
+              id="userName"
+              placeholder="User Name"
+              value="<%= userName %>"
+              required
+              class="w-full p-3 rounded-md bg-gray-800 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-500 text-white"
+            />
+          </div>
+
+          <!-- Password -->
+          <div>
+            <label for="password" class="block mb-1 text-gray-400"
+              >Password</label
+            >
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Password"
+              required
+              class="w-full p-3 rounded-md bg-gray-800 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-500 text-white"
+            />
+          </div>
+
+          <!-- Login Button (Left-aligned) -->
+          <div class="text-left">
+            <button
+              type="submit"
+              class="bg-green-500 hover:bg-green-600 text-white font-medium rounded-md w-32 h-12 flex items-center justify-center"
+            >
+              Login
+            </button>
+          </div>
+        </form>
+
+        <!-- Error Message -->
+        <% if (errorMessage) { %>
+        <div class="alert alert-error mt-6">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="stroke-current shrink-0 h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+          <span><%= errorMessage %></span>
+        </div>
+        <% } %>
+      </div>
+    </main>
+  </body>
+</html>

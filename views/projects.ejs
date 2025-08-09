@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects – Electric Vehicle Solutions</title>
+  <link rel="stylesheet" href="/css/main.css" />
+</head>
+
+<body>
+  <%- include('partials/navbar', { page: '/solutions/projects' }) %>
+
+
+    <div class="hero min-h-[30vh] bg-base-200">
+      <div class="hero-content text-center">
+        <div class="max-w-md">
+          <h1 class="text-4xl font-bold">Projects</h1>
+          <p class="py-4">Explore projects across different sectors</p>
+          <div class="flex flex-wrap justify-center gap-2 mt-4">
+            <a href="/solutions/projects" class="btn btn-sm btn-outline">All</a>
+            <a href="/solutions/projects?sector=Urban%20Mobility" class="btn btn-sm btn-outline">Urban Mobility</a>
+            <a href="/solutions/projects?sector=Battery%20Technology" class="btn btn-sm btn-outline">Battery
+              Technology</a>
+            <a href="/solutions/projects?sector=Ride%20Services" class="btn btn-sm btn-outline">Ride Services</a>
+            <a href="/solutions/projects?sector=Charging%20Infrastructure" class="btn btn-sm btn-outline">Charging
+              Infrastructure</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Projects table -->
+    <div class="container mx-auto my-10 px-4">
+      <div class="overflow-x-auto">
+        <table class="table w-full table-zebra">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Sector</th>
+              <th>Summary</th>
+              <th>Link</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% projects.forEach(project=> { %>
+              <tr>
+                <td>
+                  <%= project.title %>
+                </td>
+                <td>
+                  <a class="btn btn-xs btn-outline"
+                    href="/solutions/projects?sector=<%= encodeURIComponent(project.Sector.sector_name) %>">
+                    <%= project.Sector.sector_name %>
+                  </a>
+                </td>
+                <td>
+                  <%= project.summary_short %>
+                </td>
+                <td>
+                  <a class="btn btn-xs btn-primary" href="/solutions/projects/<%= project.id %>">Details</a>
+                </td>
+              </tr>
+              <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+</body>
+
+</html>
