@@ -254,3 +254,10 @@ projectData
   .catch((error) => {
     console.log("Failed to initialize project data:", error);
   });
+
+  // Add at the bottom
+if (process.env.VERCEL) {
+  module.exports = app;
+} else {
+  app.listen(PORT, () => console.log(`Local server running on ${PORT}`));
+}
